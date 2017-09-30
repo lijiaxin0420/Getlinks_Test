@@ -6,7 +6,7 @@ library('plyr')
 
 load('clean.Rdata')
 
-feat   = data.table(full_d[,c('customer_no', 'c', 'Bad_label')], key = 'customer_no')
+feat   = data.table(full_d[,c('customer_no', 'c', 'Bad_label')], key = 'customer_no') # sort data according to customer_no
 x_a    = data.table(full_a[,c('customer_no', 'c')], key = 'customer_no')
 x_e    = data.table(full_d[,c('customer_no', 'c')], key = 'customer_no')
 full_e = data.table(full_e, key = 'customer_no')
