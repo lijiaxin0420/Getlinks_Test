@@ -70,7 +70,6 @@ full_e[dt] = lapply(full_e[dt], function(x) as.Date(x, '%d-%B-%y'))
 ###############################
 
 # Remove extraneous features
-full_d1 = full_d
 full_d = full_d[,c(1:59,83,84)] #Remove all app_* columns (duplicates/not useful)
 extra = c('entry_time', 'feature_5', 'feature_6', 'feature_20','feature_14',
           'feature_24', 'feature_45', 'feature_47', 'feature_48', 'feature_51')
