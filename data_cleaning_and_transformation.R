@@ -13,7 +13,7 @@ load('full.Rdata')
 full_a = full_a[, colSums(is.na(full_a)) != nrow(full_a)]
 
 # Remove extraneous features
-extra = c('id','externalid', 'dt_opened', 'upload_dt', 'member_short_name')
+extra = c('dt_opened', 'upload_dt')
 full_a  = full_a[, !(colnames(full_a) %in% extra)]
 
 # Set Numeric features
