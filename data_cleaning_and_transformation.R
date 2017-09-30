@@ -93,7 +93,6 @@ full_d[cat] = lapply(full_d[cat], factor)
         ,'feature_41', 'feature_42', 'feature_44', 'feature_52', 'feature_56')
 full_d[num] = lapply(full_d[num], function(x) as.numeric(as.character(x))) # also converts non-num values to NA
 for (x in num){
-  # full_d[which(is.na(full_d[,x])), x] = 0
   full_d[which(is.na(full_d[,x])), x] = mean(full_d[,x], na.rm = TRUE)
 }
 
