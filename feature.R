@@ -28,18 +28,18 @@ hist1  = simplify2array(sapply(full_a[,'paymenthistory1'], pay_text))
 hist2  = simplify2array(sapply(full_a[,'paymenthistory2'], pay_text))
 
 # payment_history_avg_dpd_0_29_bucket
-hist1_29 = sapply(hist1, function(x)  sum(x<30, na.rm = TRUE))
+hist1_29 = sapply(hist1, function(x)  sum(x<30, na.rm = TRUE)) # Count of accounts that is in 0-29 days past due bucket throughout the payment history.
 hist2_29 = sapply(hist2, function(x)  sum(x<30, na.rm = TRUE))
 x_a$pay_dpd_0_29_bucket = apply(cbind(hist1_29, hist2_29), 1, sum)
 
 # payment_history_avg_dpd_30_bucket
-hist1_30 = sapply(hist1, function(x)  sum(x>30, na.rm = TRUE))
+hist1_30 = sapply(hist1, function(x)  sum(x>30, na.rm = TRUE)) # Count of each payment falling into the 30-or-more-days-past-due bag, with more than 30 days past due being a ‘late’ payment and therefore higher risk.
 hist2_30 = sapply(hist2, function(x)  sum(x>30, na.rm = TRUE))
 x_a$pay_dpd_30_bucket = apply(cbind(hist1_30, hist2_30), 1, sum)
 
 
 # payment_history_mean_length
-hist1_total = sapply(hist1, function(x)  length(x))
+hist1_total = sapply(hist1, function(x)  length(x)) # Length of the payment history
 hist2_total = sapply(hist2, function(x)  length(x))
 x_a$payment_history_mean_length = apply(cbind(hist1_total, hist2_total), 1, sum)
 
