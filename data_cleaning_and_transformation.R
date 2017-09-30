@@ -23,7 +23,7 @@ for (x in num){
   full_a[which(is.na(full_a[,x])), x] = 0
   
 }
-full_a[which(is.na(full_a[,'creditlimit'])), x] = mean(full_a[,x], na.rm = TRUE)
+full_a[which(is.na(full_a[,'creditlimit'])), x] = mean(full_a[,x], na.rm = TRUE) # convert 0 values to the mean of the 'creditlimit'
 
 # Set categorical features
 cat = c('owner_indic', 'acct_type', 'paymentfrequency')
