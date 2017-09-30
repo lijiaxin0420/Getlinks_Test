@@ -31,7 +31,7 @@ full_a[cat] = lapply(full_a[cat], factor)
 
 # Set char. features
 char = c('paymenthistory1', 'paymenthistory2')
-full_a[char] = lapply(full_a[char], function(x) gsub('\"\"\"', '', x))
+full_a[char] = lapply(full_a[char], function(x) gsub('\"\"\"', '', x)) # move the "" in paymenthistory 1 and 2
 
 # Set date-time features
 dt = c('last_paymt_dt', 'opened_dt', 'closed_dt', 'reporting_dt', 'paymt_str_dt', 'paymt_end_dt')
