@@ -16,6 +16,7 @@ train_e$c = as.factor('train')
 test_d$c  = as.factor('test')
 test_a$c  = as.factor('test')
 test_e$c  = as.factor('test')
+# Combine into a single data.table with no duplicate rows. 
 full_d = unique(rbind(train_d, test_d))
 full_a = unique(rbind(train_a, test_a))
 full_e = unique(rbind(train_e, test_e))
