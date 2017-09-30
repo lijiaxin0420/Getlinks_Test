@@ -18,8 +18,8 @@ pay_text = function(x){
   if (is.na(x)){
     return('XXX')
   }else{
-    text = substring(x, seq(1,nchar(x),3), seq(3,nchar(x),3))
-    text = gsub('STD', '000', text)
+    text = substring(x, seq(1,nchar(x),3), seq(3,nchar(x),3)) # Divide record in paymenthistory ("STDSTDSTDXXXXXXXXXXXXXXXSTDXXXXXXXXXXXXXXXSTD") into  "STD" "STD" "STD" "XXX" "XXX"...
+    text = gsub('STD', '000', text) # Replace "STD" by "000"
     return(as.numeric(text))
   }
 }
