@@ -46,7 +46,7 @@ full_a[dt] = lapply(full_a[dt], function(x) as.Date(x, '%d-%B-%y'))
 full_e = full_e[, colSums(is.na(full_e)) != nrow(full_e)]
 
 # Remove extraneous features
-extra = c('id','externalid', 'upload_dt', 'member_short_name')
+extra = c('upload_dt')
 full_e  = full_e[, !(colnames(full_e) %in% extra)]
 
 # Set Numeric features
